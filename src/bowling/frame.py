@@ -24,7 +24,7 @@ class Frame:
 
     def is_spare(self) -> bool:
         """ Return whether the frame is a spare or not """
-        return self.valid_throw() and self.first_throw + self.second_throw == 10
+        return self.valid_throw() and self.first_throw + self.second_throw == 10 and self.first_throw != 10
 
     # def is_last_frame(self) -> bool:
     #     """ Return whether the frame is a last frame of the game """

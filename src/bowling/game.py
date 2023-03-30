@@ -39,10 +39,10 @@ class BowlingGame:
             score += frame.score()
 
             if frame.is_strike():
-                if len(self.frames) > i:
+                if len(self.frames) > i + 1:
                     score += self.frames[i+1].score()
                     if self.frames[i+1].is_strike():
-                        if len(self.frames) > i + 1:
+                        if len(self.frames) > i + 2:
                             score +=  self.frames[i+2].first_throw
                         else:
                             score += self.bonus.first_throw
@@ -52,7 +52,7 @@ class BowlingGame:
                     
 
             if frame.is_spare():
-                if len(self.frames) > i:
+                if len(self.frames) > i + 1:
                     score += self.frames[i+1].first_throw
                 else:
                     score += self.bonus.first_throw
